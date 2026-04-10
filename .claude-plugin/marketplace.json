@@ -1,0 +1,13 @@
+{
+  "name": "hwpx-bookmaker",
+  "owner": {
+    "name": "leedonwoo"
+  },
+  "plugins": [
+    {
+      "name": "hwpx-bookmaker",
+      "source": "./",
+      "description": "시험 문제집 HWPX 생성기 — 참고 문제집 분석, 법령 텍스트 추출, AI 문제 생성, HWPX 문서 빌드"
+    }
+  ]
+}

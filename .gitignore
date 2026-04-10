@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# 사용자 데이터 (로컬 전용)
+reference/
+questions/
+output/
+exam-spec.json
+
+# IDE
+.vscode/
+.idea/
+__pycache__/
