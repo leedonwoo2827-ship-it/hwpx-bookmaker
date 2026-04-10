@@ -74,6 +74,16 @@ cd hwpx-bookmaker
 pip install -r requirements.txt
 ```
 
+#### 방법 A: MCP CLI로 등록 (간편)
+
+```bash
+mcp install server.py --name "hwpx-bookmaker"
+```
+
+`mcp install`이 Claude Desktop 설정에 자동 등록합니다.
+
+#### 방법 B: 수동 설정 파일 편집
+
 `claude_desktop_config.json`에 아래를 추가합니다.
 
 ```json
@@ -87,6 +97,10 @@ pip install -r requirements.txt
   }
 }
 ```
+
+> `claude_desktop_config.json` 위치:
+> - Windows: `%APPDATA%\Claude\claude_desktop_config.json`
+> - macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
 
 ## 사용 방법
 
