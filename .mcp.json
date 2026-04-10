@@ -1,0 +1,9 @@
+{
+  "hwpx-bookmaker": {
+    "command": "python",
+    "args": ["-X", "utf8", "${CLAUDE_PLUGIN_ROOT}/server.py"],
+    "env": {
+      "PYTHONIOENCODING": "utf-8"
+    }
+  }
+}
