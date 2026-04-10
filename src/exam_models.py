@@ -66,11 +66,12 @@ class ExamSpec:
     ))
     choice: TextStyle = field(default_factory=lambda: TextStyle(
         font="바탕", size_pt=10, align="LEFT", line_spacing=150,
-        left_indent_pt=10, space_before_pt=0, space_after_pt=0
+        left_indent_pt=10, hanging_indent_pt=12,
+        space_before_pt=0, space_after_pt=0
     ))
     explanation_header: TextStyle = field(default_factory=lambda: TextStyle(
         font="맑은 고딕", size_pt=11, bold=True, align="LEFT",
-        space_before_pt=6, space_after_pt=2
+        space_before_pt=10, space_after_pt=2
     ))
     explanation_text: TextStyle = field(default_factory=lambda: TextStyle(
         font="바탕", size_pt=9.5, align="JUSTIFY", line_spacing=150,

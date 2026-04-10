@@ -198,9 +198,15 @@ class ExamHWPXGenerator:
         # 보기
         numbering = CIRCLED_NUMBERS if self.spec.choice_numbering == "circled" else PLAIN_NUMBERS
         ch_style = self.spec.choice
+        # 내어쓰기: 번호 폭만큼 (기본 12pt, 스펙에서 조정 가능)
+        choice_hanging = ch_style.hanging_indent_pt if ch_style.hanging_indent_pt else 12.0
         for ci, choice_text in enumerate(question.choices):
             prefix = numbering[ci] if ci < len(numbering) else f"{ci+1}."
-            full_choice = f"{prefix} {choice_text}"
+            # 선지 텍스트가 이미 동일 번호로 시작하면 중복 추가 안 함
+            if choice_text.strip().startswith(prefix):
+                full_choice = choice_text.strip()
+            else:
+                full_choice = f"{prefix} {choice_text}"
             xml += builder.text_paragraph(
                 full_choice,
                 font_name=ch_style.font,
@@ -209,6 +215,7 @@ class ExamHWPXGenerator:
                 space_before_pt=ch_style.space_before_pt,
                 space_after_pt=ch_style.space_after_pt,
                 align=ch_style.align,
+                hanging_indent_pt=choice_hanging,
                 line_spacing=ch_style.line_spacing,
             )
 
